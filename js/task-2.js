@@ -26,7 +26,7 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
-
+const fragment = document.createDocumentFragment(); 
 gallery.style.display = "flex";
 gallery.style.flexDirection = "column";
 gallery.style.justifyContent = "center";
@@ -42,7 +42,9 @@ images.forEach((image) => {
   img.src = image.url;
   img.alt = image.alt;
   li.append(img);
-  gallery.append(li);
+  fragment.append(li);
 });
+
+gallery.appendChild(fragment);
 
 console.log(gallery);
